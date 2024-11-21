@@ -1,0 +1,168 @@
+/* Palette de couleurs */
+:root {
+    --orange-main: #ff7043;
+    --orange-light: #ffab91;
+    --orange-dark: #e64a19;
+    --orange-background: #fff3e0;
+    --orange-border: #ffe0b2;
+    --white: #ffffff;
+    --text-dark: #333;
+    --text-light: #666;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --yellow-main: #ffeb3b; /* Couleur jaune */
+}
+
+/* Style général */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--orange-background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px var(--shadow-color); /* Légère amélioration de l'ombre */
+}
+
+/* Style des boutons */
+button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s ease;
+    outline: none;
+}
+
+button:focus {
+    outline: 2px solid var(--orange-dark);
+}
+
+.btn-primary {
+    background-color: var(--orange-main);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--orange-dark);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: var(--orange-light);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--orange-main);
+    transform: scale(1.05);
+}
+
+/* Nouveau bouton 'ajouter' devenu jaune après ajout au panier */
+input[type="checkbox"]:checked + .btn-add {
+    background-color: var(--yellow-main);
+    color: var(--text-dark);
+}
+
+input[type="checkbox"]:checked + .btn-add:hover {
+    background-color: #fdd835; /* Un jaune légèrement plus foncé */
+    transform: scale(1.05);
+}
+
+/* Style des cartes de pizzas */
+.pizza-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.pizza-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    padding: 15px;
+    border: 1px solid var(--orange-border);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pizza-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color); /* Ombre plus douce */
+}
+
+.pizza-item img {
+    width: 90px; /* Ajustement pour garder l'image proportionnelle */
+    height: 90px;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.pizza-details {
+    flex-grow: 1;
+}
+
+.pizza-item h3 {
+    margin: 0;
+    color: var(--orange-main);
+    font-size: 1.3em;
+}
+
+.pizza-item p {
+    margin: 5px 0;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+/* Style des éléments de sélection et d'entrée */
+.pizza-item select, .pizza-item input[type="number"] {
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--orange-border);
+    font-size: 0.9em;
+}
+
+.pizza-item select:focus, .pizza-item input[type="number"]:focus {
+    outline: 1px solid var(--orange-main);
+}
+
+/* Style du panier et résumé de commande */
+.cart-items, .order-summary, .previous-orders {
+    margin-top: 20px;
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--orange-border);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.cart-total {
+    font-weight: bold;
+    color: var(--orange-main);
+    font-size: 1.2em;
+}
+
+/* Style des champs d'entrée utilisateur */
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--orange-border);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus {
+    border-color: var(--orange-main);
+}

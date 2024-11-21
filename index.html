@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande de Pizza</title>
+    <!-- Feuilles de style pour l'apparence de l'application -->
+    <link rel="stylesheet" href="styles.css"> <!-- Chargement du style de base -->
+    <link rel="stylesheet" href="visual.css"> <!-- Chargement du style visuel supplémentaire -->
+</head>
+<body>
+    <div class="container">
+        <h1>Menu de Pizzas</h1>
+        <div id="pizza-menu" class="pizza-menu"></div>
+        
+        <h2>Votre Commande</h2>
+        <div id="cart-items" class="cart-items"></div>
+        <p id="cart-total" class="cart-total">Total Panier : 0.00 €</p>
+        
+        <h2>Informations Client</h2>
+        <input type="text" id="customer-name" placeholder="Nom" required>
+        <input type="tel" id="customer-phone" placeholder="Numéro de Téléphone" required>
+        
+        <button id="submit-order" class="btn-primary">Passer la Commande</button>
+        <div id="order-summary" class="order-summary"></div>
+        
+        <h2>Commandes Précédentes</h2>
+        <div id="previous-orders" class="previous-orders"></div>
+        <button id="clear-orders" class="btn-secondary">Effacer les commandes précédentes</button>
+    </div>
+
+    <!-- Chargement du script JavaScript pour la logique de l'application -->
+    <script src="script.js"></script>
+</body>
+</html>
