@@ -16,134 +16,91 @@ body {
     background-color: var(--orange-background);
     color: var(--text-dark);
     margin: 0;
-    padding: 20px;
+    padding: 10px; /* Réduction des marges pour mobile */
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 20px;
+    max-width: 100%; /* Pleine largeur pour mobile */
+    margin: 0 auto;
+    padding: 15px;
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 4px 12px var(--shadow-color);
+    box-shadow: 0 2px 8px var(--shadow-color); /* Réduction de l'ombre */
 }
 
-h1, h2 {
-    color: var(--orange-main);
-    margin-top: 0;
-    font-weight: bold;
-}
-
+/* Boutons */
 button {
-    padding: 10px 15px;
+    padding: 8px 12px; /* Boutons légèrement plus petits */
     border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s, transform 0.2s;
-    outline: none;
+    font-size: 0.9em;
 }
 
-button:focus {
-    outline: 2px solid var(--orange-main);
-}
-
-.btn-primary {
-    background-color: var(--orange-main);
-    color: var(--white);
-}
-
-.btn-primary:hover {
-    background-color: var(--button-hover);
-    transform: scale(1.05);
-}
-
-.btn-secondary {
-    background-color: var(--orange-light);
-    color: var(--white);
-}
-
-.btn-secondary:hover {
-    background-color: var(--orange-main);
-    transform: scale(1.05);
-}
-
+/* Menu de pizzas */
 .pizza-menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Réduction de l'espacement */
 }
 
 .pizza-item {
     display: flex;
-    align-items: center;
-    background-color: var(--white);
-    padding: 15px;
+    flex-direction: column; /* Affichage vertical pour mobile */
+    align-items: flex-start;
+    padding: 10px;
     border: 1px solid var(--orange-border);
     border-radius: 8px;
-    box-shadow: 0 4px 8px var(--shadow-color);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.pizza-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--shadow-color);
+    box-shadow: 0 2px 4px var(--shadow-color); /* Ombre plus discrète */
 }
 
 .pizza-item img {
-    width: 90px;
-    height: 90px;
+    width: 100%; /* Largeur adaptative pour mobile */
+    height: auto;
     border-radius: 8px;
-    margin-right: 20px;
-    object-fit: cover;
+    margin-bottom: 10px; /* Espacement avec le contenu */
 }
 
 .pizza-details {
-    flex-grow: 1;
+    width: 100%; /* Aligne le texte sur toute la largeur */
 }
 
 .pizza-item h3 {
-    margin: 0;
-    color: var(--orange-main);
-    font-size: 1.2em;
+    font-size: 1.1em; /* Réduction de la taille */
 }
 
 .pizza-item p {
-    margin: 5px 0;
-    color: var(--text-light);
-    font-size: 0.9em;
+    font-size: 0.85em; /* Texte plus petit */
 }
 
-.pizza-item select, .pizza-item input[type="number"] {
-    margin-left: 10px;
-    margin-top: 5px;
+.pizza-item select, 
+.pizza-item input[type="number"] {
+    margin-top: 10px;
     padding: 5px;
-    border-radius: 4px;
-    border: 1px solid var(--orange-border);
     font-size: 0.9em;
-    width: auto;
+    width: 100%; /* Utilise toute la largeur */
 }
 
+/* Panier et résumé */
 .cart-items, .order-summary, .previous-orders {
-    margin-top: 20px;
-    background-color: var(--orange-background);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--orange-border);
-    box-shadow: 0 0 5px var(--shadow-color);
-}
-
-.cart-total {
-    font-weight: bold;
-    color: var(--orange-main);
-    font-size: 1.1em;
-}
-
-input[type="text"], input[type="tel"] {
-    width: 100%;
     padding: 10px;
-    border: 1px solid var(--orange-border);
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 1em;
+    font-size: 0.9em;
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .pizza-item {
+        padding: 10px;
+    }
+
+    .pizza-item img {
+        max-width: 100px; /* Images plus petites */
+        margin-right: 15px;
+    }
+
+    button {
+        width: 100%; /* Pleine largeur pour boutons */
+    }
 }
