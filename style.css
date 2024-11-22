@@ -1,0 +1,106 @@
+/* Couleurs */
+:root {
+    --orange-main: #ff7043;
+    --orange-light: #ff8a65;
+    --orange-background: #fff3e0;
+    --orange-border: #ffe0b2;
+    --text-dark: #333;
+    --text-light: #666;
+    --button-hover: #e64a19;
+    --white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--orange-background);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 10px; /* Réduction des marges pour mobile */
+}
+
+.container {
+    max-width: 100%; /* Pleine largeur pour mobile */
+    margin: 0 auto;
+    padding: 15px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-color); /* Réduction de l'ombre */
+}
+
+/* Boutons */
+button {
+    padding: 8px 12px; /* Boutons légèrement plus petits */
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Menu de pizzas */
+.pizza-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Réduction de l'espacement */
+}
+
+.pizza-item {
+    display: flex;
+    flex-direction: column; /* Affichage vertical pour mobile */
+    align-items: flex-start;
+    padding: 10px;
+    border: 1px solid var(--orange-border);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-color); /* Ombre plus discrète */
+}
+
+.pizza-item img {
+    width: 100%; /* Largeur adaptative pour mobile */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacement avec le contenu */
+}
+
+.pizza-details {
+    width: 100%; /* Aligne le texte sur toute la largeur */
+}
+
+.pizza-item h3 {
+    font-size: 1.1em; /* Réduction de la taille */
+}
+
+.pizza-item p {
+    font-size: 0.85em; /* Texte plus petit */
+}
+
+.pizza-item select, 
+.pizza-item input[type="number"] {
+    margin-top: 10px;
+    padding: 5px;
+    font-size: 0.9em;
+    width: 100%; /* Utilise toute la largeur */
+}
+
+/* Panier et résumé */
+.cart-items, .order-summary, .previous-orders {
+    padding: 10px;
+    font-size: 0.9em;
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .pizza-item {
+        padding: 10px;
+    }
+
+    .pizza-item img {
+        max-width: 100px; /* Images plus petites */
+        margin-right: 15px;
+    }
+
+    button {
+        width: 100%; /* Pleine largeur pour boutons */
+    }
+}
