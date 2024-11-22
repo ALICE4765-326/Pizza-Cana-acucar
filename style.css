@@ -16,91 +16,134 @@ body {
     background-color: var(--orange-background);
     color: var(--text-dark);
     margin: 0;
-    padding: 10px; /* Réduction des marges pour mobile */
+    padding: 20px;
 }
 
 .container {
-    max-width: 100%; /* Pleine largeur pour mobile */
-    margin: 0 auto;
-    padding: 15px;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
     background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 8px var(--shadow-color); /* Réduction de l'ombre */
+    box-shadow: 0 4px 12px var(--shadow-color);
 }
 
-/* Boutons */
+h1, h2 {
+    color: var(--orange-main);
+    margin-top: 0;
+    font-weight: bold;
+}
+
 button {
-    padding: 8px 12px; /* Boutons légèrement plus petits */
+    padding: 10px 15px;
     border-radius: 5px;
-    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
 }
 
-/* Menu de pizzas */
+button:focus {
+    outline: 2px solid var(--orange-main);
+}
+
+.btn-primary {
+    background-color: var(--orange-main);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background-color: var(--orange-light);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--orange-main);
+    transform: scale(1.05);
+}
+
 .pizza-menu {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Réduction de l'espacement */
+    gap: 20px;
 }
 
 .pizza-item {
     display: flex;
-    flex-direction: column; /* Affichage vertical pour mobile */
-    align-items: flex-start;
-    padding: 10px;
+    align-items: center;
+    background-color: var(--white);
+    padding: 15px;
     border: 1px solid var(--orange-border);
     border-radius: 8px;
-    box-shadow: 0 2px 4px var(--shadow-color); /* Ombre plus discrète */
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pizza-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
 }
 
 .pizza-item img {
-    width: 100%; /* Largeur adaptative pour mobile */
-    height: auto;
+    width: 90px;
+    height: 90px;
     border-radius: 8px;
-    margin-bottom: 10px; /* Espacement avec le contenu */
+    margin-right: 20px;
+    object-fit: cover;
 }
 
 .pizza-details {
-    width: 100%; /* Aligne le texte sur toute la largeur */
+    flex-grow: 1;
 }
 
 .pizza-item h3 {
-    font-size: 1.1em; /* Réduction de la taille */
+    margin: 0;
+    color: var(--orange-main);
+    font-size: 1.2em;
 }
 
 .pizza-item p {
-    font-size: 0.85em; /* Texte plus petit */
+    margin: 5px 0;
+    color: var(--text-light);
+    font-size: 0.9em;
 }
 
-.pizza-item select, 
-.pizza-item input[type="number"] {
-    margin-top: 10px;
+.pizza-item select, .pizza-item input[type="number"] {
+    margin-left: 10px;
+    margin-top: 5px;
     padding: 5px;
+    border-radius: 4px;
+    border: 1px solid var(--orange-border);
     font-size: 0.9em;
-    width: 100%; /* Utilise toute la largeur */
+    width: auto;
 }
 
-/* Panier et résumé */
 .cart-items, .order-summary, .previous-orders {
-    padding: 10px;
-    font-size: 0.9em;
+    margin-top: 20px;
+    background-color: var(--orange-background);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--orange-border);
+    box-shadow: 0 0 5px var(--shadow-color);
 }
 
-/* Media Queries pour mobile */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
+.cart-total {
+    font-weight: bold;
+    color: var(--orange-main);
+    font-size: 1.1em;
+}
 
-    .pizza-item {
-        padding: 10px;
-    }
-
-    .pizza-item img {
-        max-width: 100px; /* Images plus petites */
-        margin-right: 15px;
-    }
-
-    button {
-        width: 100%; /* Pleine largeur pour boutons */
-    }
+input[type="text"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--orange-border);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 1em;
 }
